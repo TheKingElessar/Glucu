@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?><!--*************************************************************************-->
+<!-- SCICHARTÂ® Copyright SciChart Ltd. 2011-2016. All rights reserved. -->
+<!--   -->
+<!-- Web: http://www.scichart.com -->
+<!-- Support: support@scichart.com -->
+<!-- Sales:   sales@scichart.com -->
+<!--  -->
+<!-- example_single_chart_fragment.xml is part of the SCICHARTÂ® Examples. Permission is hereby granted -->
+<!-- to modify, create derivative works, distribute and publish any part of this source -->
+<!-- code whether for commercial, private or personal use. -->
+<!--  -->
+<!-- The SCICHARTÂ® examples are distributed in the hope that they will be useful, but -->
+<!-- without any warranty. It is provided "AS IS" without warranty of any kind, either -->
+<!-- expressed or implied. -->
+<!--*************************************************************************-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!-- Remove the next LinearLayout if you never get it working -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/talkButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="talkClick" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/LatestEGVS"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:width="20dp"
+            android:text="888"
+            android:textAlignment="textStart"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="301dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/white_trans" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="11dp"
+            android:onClick="showDetails"
+            android:orientation="vertical"
+            android:text="Details"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <com.scichart.charting.visuals.SciChartSurface
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.scichart.charting.visuals.SciChartSurface>
+
+</LinearLayout>

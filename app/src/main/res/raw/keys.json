@@ -1,0 +1,10 @@
+{
+  "client_id": "",
+  "client_secret": "",
+  "redirect_uri": "glucu://",
+  "response_type": "code",
+  "scope": "offline_access",
+  "authentication_target_url": "https://api.dexcom.com/v2/oauth2/login?",
+  "token_target_url": "https://api.dexcom.com/v2/oauth2/token?",
+  "egvs_target_url": "https://api.dexcom.com/v2/users/self/egvs?"
+}

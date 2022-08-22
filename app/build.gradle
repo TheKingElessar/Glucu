@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.glucu"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+
+    packagingOptions {
+        exclude 'com/scichart/core/package-frame.html'
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
+
+
+}
+
+configurations {
+    all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    def work_version = "1.0.1"
+    implementation "android.arch.work:work-runtime:$work_version"
+    implementation group: 'com.diogonunes', name: 'JCDP', version: '2.0.3.1'
+    implementation group: 'com.google.guava', name: 'guava', version: '24.1-jre'
+
+    // Butterknife (used for binding elements to views)
+    //   implementation 'com.jakewharton:butterknife:8.8.1'
+    // annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // Declare SciChart libraries as module dependencies
+    implementation(group: 'com.scichart.library', name: 'core', version: '2.0.0.1654', ext: 'aar')
+    implementation(group: 'com.scichart.library', name: 'data', version: '2.0.0.1654', ext: 'aar')
+    implementation(group: 'com.scichart.library', name: 'drawing', version: '2.0.0.1654', ext: 'aar')
+    implementation(group: 'com.scichart.library', name: 'charting', version: '2.0.0.1654', ext: 'aar')
+    implementation(group: 'com.scichart.library', name: 'extensions', version: '2.0.0.1654', ext: 'aar')
+
+    // Room components
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.roomVersion"
+    androidTestImplementation "android.arch.persistence.room:testing:$rootProject.roomVersion"
+    // Lifecycle components
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.google.android.support:wearable:2.4.0'
+    implementation 'com.google.android.gms:play-services-wearable:16.0.1'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.android.support:wear:28.0.0'
+    compileOnly 'com.google.android.wearable:wearable:2.4.0'
+
+    wearApp project(':glucu')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.google.android.gms:play-services-wearable:16.0.1'
+
+
+}

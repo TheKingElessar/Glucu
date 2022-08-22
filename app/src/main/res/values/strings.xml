@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Glucu</string>
+    <string name="retrieved_values_default">Retrieved values should go here</string>
+    <string name="title_activity_database_test">DatabaseTest</string>
+</resources>

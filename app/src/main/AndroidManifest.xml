@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.glucu">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service
+            android:name=".Watch.MessageService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <data android:scheme="wear" android:host="*" android:pathPrefix="/my_path" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Watch.MainActivityWear"
+            android:label="Glucu"/>
+        <activity
+            android:name=".DisplayData.DisplayEGVS"
+            android:parentActivityName=".MainActivity" />
+
+        <service
+            android:name=".Authentication.GetTokens.BackgroundRefreshTokens"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Authentication.UserAuthorization.BeginUserAuthorization"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Authentication.UserAuthorization.StoreAuthorizationCode"
+            android:parentActivityName=".Authentication.UserAuthorization.BeginUserAuthorization">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="glucu" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+    </application>
+
+</manifest>

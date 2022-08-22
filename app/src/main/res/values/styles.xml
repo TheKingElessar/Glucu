@@ -1,0 +1,71 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:colorBackground">@color/dark_background</item>
+
+    </style>
+
+    <!-- The default font for RecyclerView items is too small.
+The margin is a simple delimiter between the words. -->
+    <style name="word_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="SciChart_Glucu" parent="SciChart_BaseStyle">
+        <!-- Background defaults -->
+        <item name="sciChartBackground">@drawable/dark_background</item>
+        <item name="legendBackground">@drawable/axis_background</item>
+        <item name="axisTooltipBackground">@drawable/axis_background</item>
+
+        <item name="renderableSeriesAreaBorderColor">@color/legend_background</item>
+        <item name="renderableSeriesAreaFillColor">@android:color/transparent</item>
+
+        <item name="defaultTextColor">#EEEEEE</item>
+
+        <!-- Axis defaults -->
+        <item name="tickTextColor">#EEEEEE</item>
+        <item name="majorGridLinesColor">@color/legend_background</item>
+        <item name="minorGridLinesColor">@android:color/transparent</item>
+
+
+        <!-- Modifier defaults -->
+        <item name="rolloverLineColor">#38761d</item>
+        <item name="cursorLineColor">#996495ED</item> <!-- Nothing after this is used currently so forget about it -->
+        <item name="rubberBandStrokeColor">#77999999</item>
+        <item name="rubberBandFillColor">#33999999</item>
+        <item name="axisTooltipTextColor">#EEEEEE</item>
+
+        <!-- MountainSeries defaults -->
+        <item name="mountainLineColor">#76BBD2</item>
+        <item name="mountainAreaColor">#094C9F</item>
+
+        <!-- LineSeries defaults -->
+        <item name="lineSeriesColor">#FFC6E6FF</item>
+
+        <!-- ColumnSeries defaults -->
+        <item name="columnLineColor">#FFFFFFFF</item>
+        <item name="columnFillColor">#FFFFFFFF</item>
+
+        <!-- CandlestickSeries defaults -->
+        <item name="candleStickStrokeUpColor">#FF6495ED</item>
+        <item name="candleStickStrokeDownColor">#FF00008B</item>
+        <item name="candleStickFillUpColor">#A06495ED</item>
+        <item name="candleStickFillDownColor">#A000008B</item>
+
+        <!-- BandSeries defaults -->
+        <item name="bandStrokeUpColor">#FF6495ED</item>
+        <item name="bandStrokeDownColor">#FF00008B</item>
+        <item name="bandFillUpColor">#A06495ED</item>
+        <item name="bandFillDownColor">#A000008B</item>
+    </style>
+</resources>
